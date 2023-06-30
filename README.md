@@ -62,6 +62,7 @@ $sudo nano /etc/hostapd/hostapd.conf
     wpa_pairwise=TKIP
     rsn_pairwise=CCMP
 ```
+$sudo reboot
 
 ####
 WiFiHotspotName is the name (or “SSID”) one sees in the WiFi network selection menu on your computer or phone; replace with something descriptive.
