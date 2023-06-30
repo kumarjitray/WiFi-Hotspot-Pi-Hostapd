@@ -77,3 +77,5 @@ hw_mode can be a, b or g, corresponding to different 802.11 WiFi generations. 80
 channel will depend on hw_mode and your country. If it’s a 2.4 GHz mode (b or g), this is 1–11 (and up to 14 in some places) (List of 2.4 GHz channels). If 5 GHz (hw_mode=a only), the range is much larger and a bit confusing (List of 5 GHz channels — look for ones with a “Yes” in your country/region’s column). 48 worked for me in the US, but you might need to try a few different channels before one sticks, rebooting each time.
 
 If using a non-Adafruit USB WiFi adapter, you might need to add a line: driver=nl80211 or similar, depends on the WiFi chip used within. Check documentation for the item, also there’s no guarantee all such dongles can work with the Pi.
+
+``` sudo service hostapd status -l ```
