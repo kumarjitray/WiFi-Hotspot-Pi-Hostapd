@@ -71,7 +71,7 @@ WifiPassword is the corresponding password for the above.
 
 country_code=US must be edited with the 2-letter country code for your location; the default here is for the United States. 5 GHz WiFi will not work correctly without it! 
 
-The lines hw_mode=a and channel=48 probably will need to be edited…
+The lines hw_mode=a and channel=48 (36, 40, 44, 48) probably will need to be edited…
 
 hw_mode can be a, b or g, corresponding to different 802.11 WiFi generations. 802.11a is 5 GHz (Pi 3 B+ onwards), the others are 2.4 GHz; for USB WiFi dongles, try g.
 
