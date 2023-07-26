@@ -4,38 +4,36 @@ This is for Raspberry Pi 3B+ model with Raspios 32bit image. The procedure will 
 
 ## Follow the following instruction--->>>
 
-```
-    $sudo apt update
+1.     $sudo apt update
 
-    $sudo apt -y upgrade
+2.     $sudo apt -y upgrade
 
-    $sudo apt install -y hostapd dnsmasq
+3.     $sudo apt install -y hostapd dnsmasq
 
-    $sudo systemctl unmask hostapd
+4.     $sudo systemctl unmask hostapd
 
-    $sudo systemctl enable hostapd
+5.     $sudo systemctl enable hostapd
 
-    $sudo DEBIAN_FRONTEND=noninteractive apt install -y netfilter-persistent iptables-persistent
+6.     $sudo DEBIAN_FRONTEND=noninteractive apt install -y netfilter-persistent iptables-persistent
 
-    $sudo reboot
+7.     $sudo reboot
 
-```
 ### This will be the IP of your AP's Wlan0 port.
-$sudo nano /etc/dhcpcd.conf
+1.     $sudo nano /etc/dhcpcd.conf
 ```
     interface wlan0
     static ip_address=192.168.4.1/24
     nohook wpa_supplicant
     
 ```
-$sudo nano /etc/sysctl.d/routed-ap.conf
+2.     $sudo nano /etc/sysctl.d/routed-ap.conf
 ```
     # Enable IPv4 routing
     net.ipv4.ip_forward=1
 ```
 
 ### Everything in this file is commented out by default, so you can insert the following lines anywhere…beginning, end, or delete everything there and replace with just these lines.
-$sudo nano /etc/dnsmasq.conf
+1.     $sudo nano /etc/dnsmasq.conf
 ```
     interface=wlan0 # Listening interface
     dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
@@ -46,7 +44,7 @@ $sudo nano /etc/dnsmasq.conf
     # Alias for this router
 ```
 
-$sudo nano /etc/hostapd/hostapd.conf
+2.     $sudo nano /etc/hostapd/hostapd.conf
 ```
     country_code=IN
     interface=wlan0
@@ -62,7 +60,7 @@ $sudo nano /etc/hostapd/hostapd.conf
     wpa_pairwise=TKIP
     rsn_pairwise=CCMP
 ```
-$sudo reboot
+3.     $sudo reboot
 
 ####
 WiFiHotspotName is the name (or “SSID”) one sees in the WiFi network selection menu on your computer or phone; replace with something descriptive.
